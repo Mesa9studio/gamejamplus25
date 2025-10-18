@@ -4,11 +4,13 @@ using UnityEngine;
 public class SessionMap : MonoBehaviour
 {
     [SerializeField] private List<MapPosition> m_sessionMap = new List<MapPosition>();
-    [SerializeField] private List<PlayerPieceElement> m_playerLeft;
-    [SerializeField] private List<PlayerPieceElement> m_playerRight;
+    [SerializeField] private List<SessionPlayer> m_players = new List<SessionPlayer>();
     [SerializeField] private PlayerPieceElement m_currentObjectClick;
     [SerializeField] private List<TypePlayerEnum> m_playersGame;
     [SerializeField] private TypePlayerEnum m_currentPlayer;
+    [SerializeField] private TypePlayerEnum m_winnerPlayer;
+    [SerializeField] private int m_minimumMapForce;
+    private bool fimDeJogo;
     private void Start()
     {
         ChooseFirstPlayer();
@@ -32,7 +34,7 @@ public class SessionMap : MonoBehaviour
             }
         }
     }
-
+    #region Gameplay
     private void ChooseFirstPlayer()
     {
         var index = Random.Range(0, m_playersGame.Count);
@@ -48,16 +50,57 @@ public class SessionMap : MonoBehaviour
         Debug.Log("Movimento validado? " + isValidMovement);
         if (isValidMovement)
         {
+            var isGameVictory = CheckVictory();
+            var isGameDraw = false;
+            if (!isGameVictory)
+            {
+                var isGameFull = CheckDraw();
+                if (isGameFull)
+                {
+                    SessionPlayer nextPlayer = null;
+                    foreach (var player in m_players)
+                    {
+                        if (player.TypePlayer != m_currentPlayer)
+                        {
+                            nextPlayer = player;
+                        }
+                    }
+                    isGameDraw = (isGameFull && nextPlayer?.GetMaxForceSessionPlayer() > m_minimumMapForce) ? false : true;
+                    if (isGameDraw)
+                    {
+                        fimDeJogo = true;
+                    }
+                }
+            }
+            else
+            {
+                fimDeJogo = true;
+                m_winnerPlayer = m_currentPlayer;
+            }
+            Debug.Log("Game has a victory?" + isGameVictory);
+            Debug.Log("Game has a draw?" + isGameDraw);
             m_currentObjectClick = null;
-            ShowCurrentBoardGame();
-            ChangeCurrentPlayer();
+            if (!fimDeJogo)
+            {
+                ChangeCurrentPlayer();
+            }
+            else
+            {
+                if(m_winnerPlayer != TypePlayerEnum.None)
+                {
+                    Debug.Log("O jogo foi vencido por: " + m_winnerPlayer);
+                }
+                else
+                {
+                    Debug.Log("O jogo foi empate");
+                }
+            }
         }
     }
 
     private void ChangeCurrentPlayer()
     {
         var index = m_playersGame.IndexOf(m_currentPlayer);
-
         m_currentPlayer = index == 0 ? m_playersGame[1] : m_playersGame[0];
     }
     private void SelectElement(RaycastHit2D hitInfo)
@@ -79,7 +122,7 @@ public class SessionMap : MonoBehaviour
             }
             else
             {
-                if(elementClicked.TypePlayer == m_currentPlayer)
+                if (elementClicked.TypePlayer == m_currentPlayer)
                 {
                     m_currentObjectClick.Deselect();
                     m_currentObjectClick = elementClicked;
@@ -88,6 +131,103 @@ public class SessionMap : MonoBehaviour
             }
         }
     }
+    #endregion
+    #region Check victory or draw
+    private bool CheckDraw()
+    {
+        var isBoardFull = true;
+        m_minimumMapForce = 3;
+        foreach (var pos in m_sessionMap)
+        {
+            if (pos.GetLastMovement().TypePlayer == TypePlayerEnum.None)
+            {
+                isBoardFull = false;
+            }
+            if(pos.GetLastMovement().PieceForce < m_minimumMapForce)
+            {
+                m_minimumMapForce = pos.GetLastMovement().PieceForce;
+            }
+        }
+        return isBoardFull;
+    }
+    private bool CheckVictory()
+    {
+        var isGameDone = false;
+        isGameDone = CheckRow();
+
+        if (!isGameDone)
+        {
+            isGameDone = CheckCollum();
+        }
+
+        if (!isGameDone)
+        {
+            isGameDone = CheckDiagonal();
+        }
+        return isGameDone;
+    }
+
+    private bool CheckRow()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            var firstPosition = m_sessionMap[3 * i + 0].GetLastMovement();
+            var secondPosition = m_sessionMap[3 * i + 1].GetLastMovement();
+            var thirdPosition = m_sessionMap[3 * i + 2].GetLastMovement();
+            if (firstPosition.TypePlayer == secondPosition.TypePlayer &&
+                firstPosition.TypePlayer == thirdPosition.TypePlayer &&
+                firstPosition.TypePlayer == m_currentPlayer)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private bool CheckCollum()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            var firstPosition = m_sessionMap[3 * 0 + i].GetLastMovement();
+            var secondPosition = m_sessionMap[3 * 1 + i].GetLastMovement();
+            var thirdPosition = m_sessionMap[3 * 2 + i].GetLastMovement();
+            if (firstPosition.TypePlayer == secondPosition.TypePlayer &&
+                firstPosition.TypePlayer == thirdPosition.TypePlayer &&
+                firstPosition.TypePlayer == m_currentPlayer)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool CheckDiagonal()
+    {
+        var firstPosition = m_sessionMap[0].GetLastMovement();
+        var secondPosition = m_sessionMap[4].GetLastMovement();
+        var thirdPosition = m_sessionMap[8].GetLastMovement();
+        if (firstPosition.TypePlayer == secondPosition.TypePlayer &&
+            firstPosition.TypePlayer == thirdPosition.TypePlayer &&
+            firstPosition.TypePlayer == m_currentPlayer)
+        {
+            return true;
+        }
+
+        firstPosition = m_sessionMap[2].GetLastMovement();
+        secondPosition = m_sessionMap[4].GetLastMovement();
+        thirdPosition = m_sessionMap[6].GetLastMovement();
+
+        if (firstPosition.TypePlayer == secondPosition.TypePlayer &&
+            firstPosition.TypePlayer == thirdPosition.TypePlayer &&
+            firstPosition.TypePlayer == m_currentPlayer)
+        {
+            return true;
+        }
+        return false;
+    }
+    #endregion
+
     private void ShowCurrentBoardGame()
     {
         Debug.Log("Show Current Board Game");
