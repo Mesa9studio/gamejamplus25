@@ -23,12 +23,12 @@ public class SessionMap : MonoBehaviour
             Vector2 pos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pos), Vector2.zero);
             // RaycastHit2D can be either true or null, but has an implicit conversion to bool, so we can use it like this
-            if (hitInfo && hitInfo.collider.CompareTag("PlayerElement"))
+            if (hitInfo && hitInfo.collider.CompareTag("PlayerElement") && !fimDeJogo)
             {
                 SelectElement(hitInfo);
             }
 
-            if (hitInfo && hitInfo.collider.CompareTag("MapElement"))
+            if (hitInfo && hitInfo.collider.CompareTag("MapElement") && !fimDeJogo)
             {
                 SelectMapElement(hitInfo);
             }
