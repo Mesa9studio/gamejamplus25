@@ -63,11 +63,33 @@ MonoBehaviour:
   - {fileID: 9203657595228973569}
   - {fileID: 2604309581611630940}
   - {fileID: 1851771282682529682}
-  m_playerLeft: []
-  m_playerRight: []
+  m_players:
+  - m_typePlayer: 1
+    m_pieces:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - m_typePlayer: 2
+    m_pieces:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   m_currentObjectClick: {fileID: 0}
   m_playersGame: 0100000002000000
   m_currentPlayer: 0
+  m_minimumMapForce: 0
 --- !u!1001 &906193246291891082
 PrefabInstance:
   m_ObjectHideFlags: 0
