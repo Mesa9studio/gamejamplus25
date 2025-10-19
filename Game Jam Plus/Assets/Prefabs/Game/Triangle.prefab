@@ -81,8 +81,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.061437607, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 2425400444856017036, guid: 7a185d94d16cc344aa0ff2ab53d4c06d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,17 +126,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.71, y: 10.02}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.71, y: 10.02}
   m_EdgeRadius: 0
 --- !u!114 &3647043675196359604
 MonoBehaviour:
@@ -152,5 +152,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPieceElement
   m_typePlayer: 1
   m_pieceForce: 0
-  m_elementSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_elementColor: {r: 0.0627451, g: 1, b: 0, a: 1}
+  m_elementSprite: {fileID: 2425400444856017036, guid: 7a185d94d16cc344aa0ff2ab53d4c06d, type: 3}
+  m_elementColor: {r: 1, g: 1, b: 1, a: 1}

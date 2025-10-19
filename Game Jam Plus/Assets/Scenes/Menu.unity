@@ -827,6 +827,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3573013619183982914, guid: a56872c57543acf48bc03a28bba99ecb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3595786564231474732, guid: a56872c57543acf48bc03a28bba99ecb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1012,9 +1016,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5685919208987530062, guid: 470001299e4f25a4cb05970b139e91ba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 483673394}
     - target: {fileID: 5925221384399255744, guid: 470001299e4f25a4cb05970b139e91ba, type: 3}
       propertyPath: m_Name
       value: Creditos
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925221384399255744, guid: 470001299e4f25a4cb05970b139e91ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

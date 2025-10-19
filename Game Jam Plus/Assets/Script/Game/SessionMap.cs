@@ -10,19 +10,61 @@ public class SessionMap : MonoBehaviour
     [SerializeField] private TypePlayerEnum m_currentPlayer;
     [SerializeField] private TypePlayerEnum m_winnerPlayer;
     [SerializeField] private int m_minimumMapForce;
+    [SerializeField] private GameObject m_indicatorCurrentObjectClick;
+    [SerializeField] private float m_indicatorOffset;
+    [SerializeField] private GameCanvasUI m_gameCanvasUI;
+    [SerializeField] private GameObject m_groupPlayerOne;
+    [SerializeField] private GameObject m_groupPlayerTwo;
+    [SerializeField] private RuntimePlatform m_runTimePlataform;
+
     private bool fimDeJogo;
     private void Start()
     {
+        m_runTimePlataform = Application.platform;
         ChooseFirstPlayer();
     }
 
     private void Update()
     {
+        if (m_runTimePlataform == RuntimePlatform.Android || m_runTimePlataform == RuntimePlatform.IPhonePlayer)
+        {
+            ClickAndroid();
+        }
+        else
+        {
+            ClickPC();
+        }
+    }
+    #region Gameplay
+
+    private void ClickAndroid()
+    {
+        if (Input.touchCount > 0)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                Debug.Log("Click Android");
+                Vector2 pos = new Vector2(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
+                RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pos), Vector2.zero);
+                if (hitInfo && hitInfo.collider.CompareTag("PlayerElement") && !fimDeJogo)
+                {
+                    SelectElement(hitInfo);
+                }
+
+                if (hitInfo && hitInfo.collider.CompareTag("MapElement") && !fimDeJogo)
+                {
+                    SelectMapElement(hitInfo);
+                }
+            }
+        }
+    }
+    private void ClickPC()
+    {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("CLick PC");
             Vector2 pos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pos), Vector2.zero);
-            // RaycastHit2D can be either true or null, but has an implicit conversion to bool, so we can use it like this
             if (hitInfo && hitInfo.collider.CompareTag("PlayerElement") && !fimDeJogo)
             {
                 SelectElement(hitInfo);
@@ -34,11 +76,12 @@ public class SessionMap : MonoBehaviour
             }
         }
     }
-    #region Gameplay
+
     private void ChooseFirstPlayer()
     {
         var index = Random.Range(0, m_playersGame.Count);
         m_currentPlayer = m_playersGame[index];
+        m_gameCanvasUI.ShowCurrentPlayerTurn(m_currentPlayer);
     }
     private void SelectMapElement(RaycastHit2D hitInfo)
     {
@@ -50,6 +93,7 @@ public class SessionMap : MonoBehaviour
         Debug.Log("Movimento validado? " + isValidMovement);
         if (isValidMovement)
         {
+            SetIndicatorPosition(false);
             var isGameVictory = CheckVictory();
             var isGameDraw = false;
             if (!isGameVictory)
@@ -86,7 +130,10 @@ public class SessionMap : MonoBehaviour
             }
             else
             {
-                if(m_winnerPlayer != TypePlayerEnum.None)
+                m_groupPlayerOne.SetActive(false);
+                m_groupPlayerTwo.SetActive(false);
+                m_gameCanvasUI.ShowResult(m_winnerPlayer);
+                if (m_winnerPlayer != TypePlayerEnum.None)
                 {
                     Debug.Log("O jogo foi vencido por: " + m_winnerPlayer);
                 }
@@ -102,6 +149,7 @@ public class SessionMap : MonoBehaviour
     {
         var index = m_playersGame.IndexOf(m_currentPlayer);
         m_currentPlayer = index == 0 ? m_playersGame[1] : m_playersGame[0];
+        m_gameCanvasUI.ShowCurrentPlayerTurn(m_currentPlayer);
     }
     private void SelectElement(RaycastHit2D hitInfo)
     {
@@ -111,6 +159,7 @@ public class SessionMap : MonoBehaviour
             if (elementClicked.TypePlayer == m_currentPlayer)
             {
                 m_currentObjectClick = elementClicked?.Select();
+                SetIndicatorPosition(true);
             }
         }
         else
@@ -119,6 +168,7 @@ public class SessionMap : MonoBehaviour
             {
                 m_currentObjectClick.Deselect();
                 m_currentObjectClick = null;
+                SetIndicatorPosition(false);
             }
             else
             {
@@ -126,10 +176,21 @@ public class SessionMap : MonoBehaviour
                 {
                     m_currentObjectClick.Deselect();
                     m_currentObjectClick = elementClicked;
+                    SetIndicatorPosition(true);
                     m_currentObjectClick.Select();
                 }
             }
         }
+    }
+
+    private void SetIndicatorPosition(bool isActive)
+    {
+        if(m_currentObjectClick != null)
+        {
+            var defaultPosition = m_currentObjectClick.transform.position;
+            m_indicatorCurrentObjectClick.transform.position = new Vector3(defaultPosition.x, defaultPosition.y + m_indicatorOffset, defaultPosition.z);
+        }
+        m_indicatorCurrentObjectClick.SetActive(isActive);
     }
     #endregion
     #region Check victory or draw

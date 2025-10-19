@@ -50,7 +50,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
-      value: Triangle (2)
+      value: PlayerKnight (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_pieceForce
@@ -58,11 +58,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.25
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -124,23 +128,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
-      value: Triangle (3)
+      value: PlayerKnight (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -194,7 +198,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
-      value: Triangle (8)
+      value: PlayerKnight (8)
       objectReference: {fileID: 0}
     - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_pieceForce
@@ -202,11 +206,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.25
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -214,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -268,23 +276,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
-      value: Triangle (6)
+      value: PlayerKnight (6)
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -338,19 +346,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
-      value: Triangle (7)
+      value: PlayerKnight (7)
       objectReference: {fileID: 0}
     - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_pieceForce
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.27999997
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -404,7 +424,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
-      value: Triangle (5)
+      value: PlayerKnight (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_pieceForce
@@ -412,11 +432,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.25
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -424,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -478,19 +502,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
-      value: Triangle (4)
+      value: PlayerKnight (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_pieceForce
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.27999997
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -544,15 +580,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
-      value: Triangle (1)
+      value: PlayerKnight (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_pieceForce
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.28
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -610,19 +658,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
-      value: Triangle (0)
+      value: PlayerKnight (0)
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.y
