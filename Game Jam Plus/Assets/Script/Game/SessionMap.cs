@@ -15,21 +15,56 @@ public class SessionMap : MonoBehaviour
     [SerializeField] private GameCanvasUI m_gameCanvasUI;
     [SerializeField] private GameObject m_groupPlayerOne;
     [SerializeField] private GameObject m_groupPlayerTwo;
-
+    [SerializeField] private RuntimePlatform m_runTimePlataform;
 
     private bool fimDeJogo;
     private void Start()
     {
+        m_runTimePlataform = Application.platform;
         ChooseFirstPlayer();
     }
 
     private void Update()
     {
+        if (m_runTimePlataform == RuntimePlatform.Android || m_runTimePlataform == RuntimePlatform.IPhonePlayer)
+        {
+            ClickAndroid();
+        }
+        else
+        {
+            ClickPC();
+        }
+    }
+    #region Gameplay
+
+    private void ClickAndroid()
+    {
+        if (Input.touchCount > 0)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                Debug.Log("Click Android");
+                Vector2 pos = new Vector2(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
+                RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pos), Vector2.zero);
+                if (hitInfo && hitInfo.collider.CompareTag("PlayerElement") && !fimDeJogo)
+                {
+                    SelectElement(hitInfo);
+                }
+
+                if (hitInfo && hitInfo.collider.CompareTag("MapElement") && !fimDeJogo)
+                {
+                    SelectMapElement(hitInfo);
+                }
+            }
+        }
+    }
+    private void ClickPC()
+    {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("CLick PC");
             Vector2 pos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pos), Vector2.zero);
-            // RaycastHit2D can be either true or null, but has an implicit conversion to bool, so we can use it like this
             if (hitInfo && hitInfo.collider.CompareTag("PlayerElement") && !fimDeJogo)
             {
                 SelectElement(hitInfo);
@@ -41,7 +76,7 @@ public class SessionMap : MonoBehaviour
             }
         }
     }
-    #region Gameplay
+
     private void ChooseFirstPlayer()
     {
         var index = Random.Range(0, m_playersGame.Count);
