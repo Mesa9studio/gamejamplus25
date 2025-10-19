@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_pieceForce
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25
@@ -191,6 +195,10 @@ PrefabInstance:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
       value: Triangle (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_pieceForce
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.x
@@ -332,6 +340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_pieceForce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -393,6 +405,10 @@ PrefabInstance:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
       value: Triangle (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_pieceForce
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalScale.x
@@ -464,6 +480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_pieceForce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -525,6 +545,10 @@ PrefabInstance:
     - target: {fileID: 2244226492807220074, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_Name
       value: Triangle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3647043675196359604, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
+      propertyPath: m_pieceForce
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6137018477069865851, guid: faada93b7ba2c104da2d6ac0930a12c7, type: 3}
       propertyPath: m_LocalPosition.x
