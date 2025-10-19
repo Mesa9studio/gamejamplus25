@@ -1,6 +1,6 @@
 public enum TypePlayerEnum
 {
     None,
-    PlayerX,
+    PlayerKnight,
     PlayerO
 }

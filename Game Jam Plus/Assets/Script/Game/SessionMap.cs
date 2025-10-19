@@ -10,6 +10,13 @@ public class SessionMap : MonoBehaviour
     [SerializeField] private TypePlayerEnum m_currentPlayer;
     [SerializeField] private TypePlayerEnum m_winnerPlayer;
     [SerializeField] private int m_minimumMapForce;
+    [SerializeField] private GameObject m_indicatorCurrentObjectClick;
+    [SerializeField] private float m_indicatorOffset;
+    [SerializeField] private GameCanvasUI m_gameCanvasUI;
+    [SerializeField] private GameObject m_groupPlayerOne;
+    [SerializeField] private GameObject m_groupPlayerTwo;
+
+
     private bool fimDeJogo;
     private void Start()
     {
@@ -39,6 +46,7 @@ public class SessionMap : MonoBehaviour
     {
         var index = Random.Range(0, m_playersGame.Count);
         m_currentPlayer = m_playersGame[index];
+        m_gameCanvasUI.ShowCurrentPlayerTurn(m_currentPlayer);
     }
     private void SelectMapElement(RaycastHit2D hitInfo)
     {
@@ -50,6 +58,7 @@ public class SessionMap : MonoBehaviour
         Debug.Log("Movimento validado? " + isValidMovement);
         if (isValidMovement)
         {
+            SetIndicatorPosition(false);
             var isGameVictory = CheckVictory();
             var isGameDraw = false;
             if (!isGameVictory)
@@ -86,7 +95,10 @@ public class SessionMap : MonoBehaviour
             }
             else
             {
-                if(m_winnerPlayer != TypePlayerEnum.None)
+                m_groupPlayerOne.SetActive(false);
+                m_groupPlayerTwo.SetActive(false);
+                m_gameCanvasUI.ShowResult(m_winnerPlayer);
+                if (m_winnerPlayer != TypePlayerEnum.None)
                 {
                     Debug.Log("O jogo foi vencido por: " + m_winnerPlayer);
                 }
@@ -102,6 +114,7 @@ public class SessionMap : MonoBehaviour
     {
         var index = m_playersGame.IndexOf(m_currentPlayer);
         m_currentPlayer = index == 0 ? m_playersGame[1] : m_playersGame[0];
+        m_gameCanvasUI.ShowCurrentPlayerTurn(m_currentPlayer);
     }
     private void SelectElement(RaycastHit2D hitInfo)
     {
@@ -111,6 +124,7 @@ public class SessionMap : MonoBehaviour
             if (elementClicked.TypePlayer == m_currentPlayer)
             {
                 m_currentObjectClick = elementClicked?.Select();
+                SetIndicatorPosition(true);
             }
         }
         else
@@ -119,6 +133,7 @@ public class SessionMap : MonoBehaviour
             {
                 m_currentObjectClick.Deselect();
                 m_currentObjectClick = null;
+                SetIndicatorPosition(false);
             }
             else
             {
@@ -126,10 +141,21 @@ public class SessionMap : MonoBehaviour
                 {
                     m_currentObjectClick.Deselect();
                     m_currentObjectClick = elementClicked;
+                    SetIndicatorPosition(true);
                     m_currentObjectClick.Select();
                 }
             }
         }
+    }
+
+    private void SetIndicatorPosition(bool isActive)
+    {
+        if(m_currentObjectClick != null)
+        {
+            var defaultPosition = m_currentObjectClick.transform.position;
+            m_indicatorCurrentObjectClick.transform.position = new Vector3(defaultPosition.x, defaultPosition.y + m_indicatorOffset, defaultPosition.z);
+        }
+        m_indicatorCurrentObjectClick.SetActive(isActive);
     }
     #endregion
     #region Check victory or draw
