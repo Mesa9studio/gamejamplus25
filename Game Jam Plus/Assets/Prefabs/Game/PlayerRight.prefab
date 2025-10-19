@@ -118,6 +118,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751788493254570347}
     m_Modifications:
+    - target: {fileID: 146447545520166871, guid: 6449719601d19584d9a8403a26734c42, type: 3}
+      propertyPath: m_pieceForce
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1341814198514477814, guid: 6449719601d19584d9a8403a26734c42, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25
@@ -188,6 +192,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751788493254570347}
     m_Modifications:
+    - target: {fileID: 146447545520166871, guid: 6449719601d19584d9a8403a26734c42, type: 3}
+      propertyPath: m_pieceForce
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1341814198514477814, guid: 6449719601d19584d9a8403a26734c42, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25
@@ -258,6 +266,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751788493254570347}
     m_Modifications:
+    - target: {fileID: 146447545520166871, guid: 6449719601d19584d9a8403a26734c42, type: 3}
+      propertyPath: m_pieceForce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1341814198514477814, guid: 6449719601d19584d9a8403a26734c42, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -460,6 +472,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751788493254570347}
     m_Modifications:
+    - target: {fileID: 146447545520166871, guid: 6449719601d19584d9a8403a26734c42, type: 3}
+      propertyPath: m_pieceForce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1341814198514477814, guid: 6449719601d19584d9a8403a26734c42, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -522,6 +538,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751788493254570347}
     m_Modifications:
+    - target: {fileID: 146447545520166871, guid: 6449719601d19584d9a8403a26734c42, type: 3}
+      propertyPath: m_pieceForce
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1341814198514477814, guid: 6449719601d19584d9a8403a26734c42, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25
@@ -592,6 +612,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751788493254570347}
     m_Modifications:
+    - target: {fileID: 146447545520166871, guid: 6449719601d19584d9a8403a26734c42, type: 3}
+      propertyPath: m_pieceForce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1341814198514477814, guid: 6449719601d19584d9a8403a26734c42, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

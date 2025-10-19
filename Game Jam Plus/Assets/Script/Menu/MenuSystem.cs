@@ -39,8 +39,7 @@ public class MenuSystem : MonoBehaviour
     public void AdvanceTutorial()
     {
         m_tutorialCountPages++;
-
-
+        Debug.Log("m_tutorialCountPages < m_tutorialInfoSteps.Count: " + m_tutorialCountPages + ", " + m_tutorialInfoSteps);
         if (m_tutorialCountPages < m_tutorialInfoSteps.Count)
         {
             m_imageInfoTutorial.sprite = m_tutorialInfoSteps[m_tutorialCountPages];
